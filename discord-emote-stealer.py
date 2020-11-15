@@ -17,3 +17,9 @@ for name, link in zip(filenames, links):
     r = requests.get(link)
     with open(os.path.join("./{}".format(directory), name) + ".png", "wb") as f:
         f.write(r.content)
+        
+print(
+    "Successfully downloaded {} emotes from {} server.".format(
+        len(filenames), directory
+    )
+)
